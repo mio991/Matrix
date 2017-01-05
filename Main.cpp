@@ -4,7 +4,8 @@
 
 int main()
 {
-	Matrix2d m( 0.0, 1.0, 2.0, 0.0 );
+	Matrix2d m( -1.0, 1.0, 2.0, 5.0 );
+	std::cout << m.norm() << std::endl;
 	m.at(0,0) = -1.0;
 	m.print( std::cout );
 	m.transpose().print( std::cout );

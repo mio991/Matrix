@@ -71,7 +71,7 @@ Matrix Matrix::transpose() const
 	{
 		for (size_t j = 0; j < m_Collumns; ++j)
 		{
-			result.at(i, j) = this->at(j,i);
+			result.at(j, i) = this->at(i, j);
 		}
 	}
 	return result;
