@@ -5,13 +5,23 @@
 class Matrix
 {
 public:
+	/**
+	* Standard Copy-Construktor
+	* @param o Das Orginal das kopiert wird.
+	*/
 	Matrix(const Matrix& o);
+	/**
+	* Der Standard Constructor für eine quadratische Matrix.
+	* @param n 
+	*/
 	Matrix(size_t n);
 	Matrix(size_t m, size_t n);
 
-	double at(size_t m, size_t n) const;
-	double& at(size_t m, size_t n);
+	double at(size_t m, size_t n = 0) const;
+	double& at(size_t m, size_t n = 0);
 	void set(size_t m, size_t n, double value);
+
+	Matrix multiply(const Matrix& rhs);
 
 	double norm() const;
 	Matrix transpose() const;

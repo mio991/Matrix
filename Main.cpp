@@ -1,37 +1,14 @@
 #include <iostream>
-#include "Matrix.hpp"
+#include "Matrix2d.hpp"
+#include "Vector2.hpp"
 
 int main()
 {
-	Matrix kuchen(2);
-
-	Matrix torte(2);
-	torte.set(0, 0, 1);
-	torte.set(0, 1, 0);
-	torte.set(1, 0, 0);
-	torte.set(1, 1, 1);
-
-	kuchen.set(0, 0, 1);
-	kuchen.set(0, 1, 2);
-	kuchen.set(1, 0, 3);
-	kuchen.set(1, 1, 4);
-
-
-	kuchen.print(std::cout);
-
-	torte.print(std::cout);
-
-	torte = torte * kuchen;
-
-	kuchen.print(std::cout);
-
-	torte.print(std::cout);
-
-	torte.transpose().print(std::cout);
-
-
-
-//	std::cout << kuchen.norm() << std::endl;
-
+	Matrix2d m( 0.0, 1.0, 2.0, 0.0 );
+	m.at(0,0) = -1.0;
+	m.print( std::cout );
+	m.transpose().print( std::cout );
+	m.multiply( Vector2( 2.0, 0.0 ) ).print( std::cout );
+	m.multiply( Vector2( 0.0, 3.0 ) ).print( std::cout );
 	return 0;
 }

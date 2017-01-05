@@ -123,6 +123,11 @@ Matrix Matrix::dot(double lambda, const Matrix& rhs)
 	return result;
 }
 
+Matrix Matrix::multiply(const Matrix& rhs)
+{
+	return Matrix::multiply(*this, rhs);
+}
+
 Matrix Matrix::multiply(const Matrix& lhs, const Matrix& rhs)
 {
 	if(lhs.width() != rhs.height())
